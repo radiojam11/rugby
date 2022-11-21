@@ -1,7 +1,34 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  p Questi i Dati del Sito 
-  #{data}
+  div.View.WelcomeView
+    h1= title
+    div.Message
+      div.Title
+        h3 FrontEnders Challenge II
+    div.NavButtons
+      a(href="/games")
+          div.NavButton Games
+    div.Prova 
+      input(type='text', id='username', value= username)
+
+    div.Dati 
+        - var datiJson = data
+        - var i = 1
+        div.Lista 
+          datiJson 
+          ul
+            each val, key in datiJson.response
+              li='KEY ' + key + ': VALORE--> ' + val
+              each val1, key1 in datiJson.response[key]
+                  li= 'KEY 1 ' + key1 + ': ' + val1
+                  
+        div.Country 
+          #{JSON.stringify(data.response[1].country.name)}
+
+          div.Home 
+            #{JSON.stringify(data.response[1].teams.home.name)}
+          div.Away
+            #{JSON.stringify(data.response[1].teams.away.name)}
+
+

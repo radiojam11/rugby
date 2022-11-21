@@ -6,3 +6,22 @@ body {
 a {
   color: #00B7FF;
 }
+
+.WelcomeView {
+  background: url("/public/images/immagine.jpg") left bottom;
+  background-size: cover;
+}
+
+.Dati{
+  background-color: bisque;
+  background-size: cover; 
+  margin: 0 auto;
+  text-align: center;
+}
+
+.Country{
+  background-color: rgb(200, 100, 188);
+  background-size: cover; 
+  margin: 0 auto;
+  text-align: center;
+}
