@@ -1,15 +1,25 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 
 a {
   color: #00B7FF;
 }
 
+.ombreggiatura {
+  width: 200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffff00;
+  box-shadow: 10px 10px 5px #ccc;
+ }
+
 .WelcomeView {
-  background: url("/public/images/immagine.jpg") left bottom;
+  background: url("https://media.api-sports.io/rugby/teams/132.png") left bottom;
   background-size: cover;
+  text-align: center;
 }
 
 .Dati{
@@ -24,4 +34,11 @@ a {
   background-size: cover; 
   margin: 0 auto;
   text-align: center;
+}
+
+.logoTeamSx{
+  text-align: left;
+}
+.logoTeamDx{
+  text-align: right;
 }

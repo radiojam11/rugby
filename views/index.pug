@@ -1,34 +1,37 @@
 extends layout
 
 block content
-  div.View.WelcomeView
+  div.WelcomeView
     h1= title
     div.Message
       div.Title
-        h3 FrontEnders Challenge II
-    div.NavButtons
-      a(href="/games")
-          div.NavButton Games
-    div.Prova 
-      input(type='text', id='username', value= username)
+        h3 FrontEnders Challenge n.II
 
-    div.Dati 
-        - var datiJson = data
-        - var i = 1
-        div.Lista 
-          datiJson 
-          ul
-            each val, key in datiJson.response
-              li='KEY ' + key + ': VALORE--> ' + val
-              each val1, key1 in datiJson.response[key]
-                  li= 'KEY 1 ' + key1 + ': ' + val1
-                  
-        div.Country 
-          #{JSON.stringify(data.response[1].country.name)}
+  div.Dati 
+    .contenitore(class="row")
+      div(class='logoTeamSx col-sm-6  p-5  bg-dark text-white')
+        img(src="https://media.api-sports.io/rugby/teams/130.png")
+      div(class='logoTeamDx col-sm-6   p-5  bg-dark text-white')
+        img(src='https://media.api-sports.io/rugby/teams/132.png')
 
-          div.Home 
-            #{JSON.stringify(data.response[1].teams.home.name)}
-          div.Away
-            #{JSON.stringify(data.response[1].teams.away.name)}
+
+
+      - var datiJson = data
+      - var i = 1
+      div.Lista(class='col-sm-12',)
+        datiJson 
+        ul
+          each val, key in datiJson.response
+            li='KEY ' + key + ': VALORE--> ' + val
+            each val1, key1 in datiJson.response[key]
+                li= 'KEY 1 ' + key1 + ': ' + val1
+              
+      div.Country 
+        #{JSON.stringify(data.response[1].country.name)}
+
+        div.Home 
+          #{JSON.stringify(data.response[1].teams.home.name)}
+        div.Away
+          #{JSON.stringify(data.response[1].teams.away.name)}
 
 
